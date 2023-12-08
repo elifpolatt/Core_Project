@@ -9,7 +9,7 @@ using DataAccessLayer.Concrete;
 namespace DataAccessLayer.Repository
 {
     //Generic yapı, her defasında örneğin SkillRepository diyerek class olusturup kalıtsal olarak aldıgımız interface icerisindeki metotları cagırmak yerıne tek bir yerde bunları kullanarak kod tekrarından kacınmamızı saglar.
-    public class GenericRepository<T> : IGenericDal<T> where T : class
+    public class GenericRepository<T> : IGenericDal<T> where T : class //T burada mutlaka bir sınıf olmalı, bir metot, interface ya da başka bir şey olmamalı 
     {
         public void Delete(T p)
         {
