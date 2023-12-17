@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BussinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 
 namespace BussinessLayer.Concrete
