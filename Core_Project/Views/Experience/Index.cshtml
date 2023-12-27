@@ -1,0 +1,54 @@
+﻿@using EntityLayer.Concrete
+@model List<Experience>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Index</h1>
+<div class="container-fluid mt--6">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <!-- Card header -->
+                <div class="card-header border-0">
+                    <h3 class="mb-0">Deneyimlerim</h3>
+                </div>
+                <!-- Light table -->
+                <div class="table-responsive">
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col" class="sort" data-sort="name">#</th>
+                                <th scope="col" class="sort" data-sort="budget">BAŞLIK</th>
+                                <th scope="col" class="sort" data-sort="status">TARİH</th>
+                                <th scope="col" class="sort" data-sort="status">SİL</th>
+                                <th scope="col" class="sort" data-sort="completion">DÜZENLE</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Id</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Date</td>
+                                    <td><a href="/Experience/DeleteExperience/@item.Id" class="btn btn-primary">Sil</a></td>
+                                    <td><a href="/Experience/UpdateExperience/@item.Id" class="btn btn-secondary">Düzenle</a></td>
+                                </tr>
+
+
+                            }
+
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+            <a href="/Experience/AddExperience/" class="btn btn-success">Yeni Deneyim Ekle</a>
+        </div>
+    </div>
+
+</div>
